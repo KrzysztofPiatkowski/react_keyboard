@@ -12,11 +12,15 @@ export class App extends React.Component<{}, { pressedKey: string | null }> {
   render() {
     return (
       <div className="App">
+        <label htmlFor="keyInput" className="App__label">
+          Press any key inside the input:
+        </label>
         <input
+          id="keyInput"
           className="App__input"
           onKeyUp={this.handleKeyUp}
           autoFocus
-          style={{ opacity: 0, position: 'absolute' }}
+          placeholder="Type here..."
         />
 
         {this.state.pressedKey === null ? (
